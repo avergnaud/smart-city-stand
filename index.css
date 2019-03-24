@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box; }
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+.bandeau-titre {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  height: 3rem;
+  background-color: rgba(30, 39, 48, 0.9);
+  box-sizing: content-box;
+  text-align: center; }
+
+.titre {
+  color: #fdfdfd;
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  white-space: nowrap;
+  box-sizing: content-box; }
+
+.titre img {
+  height: 3rem;
+  vertical-align: baseline; }
+
+.titre span {
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 0.75rem;
+  margin-left: 40px; }
+
+.ticker-wrap {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  height: 3rem;
+  background-color: rgba(30, 39, 48, 0.9);
+  padding-left: 100%;
+  box-sizing: content-box; }
+  .ticker-wrap .ticker {
+    display: inline-block;
+    height: 3rem;
+    line-height: 3rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 45s;
+    animation-duration: 45s; }
+    .ticker-wrap .ticker__item {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 1.5rem;
+      color: #fdfdfd; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  /*
+  background-image: url("assets/IOTA_Smart_Energy_Ledger_of_Everything.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  */ }
+
+h1,
+h2,
+p {
+  padding: 0 5%; }
+
+.grid-container {
+  /*
+  margin-top: $hauteur;
+  */
+  height: 100%;
+  display: grid;
+  grid-template-areas: "film iota" "logos iota";
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 10px;
+  padding: 10px; }
+
+.item-film {
+  grid-area: film; }
+
+.item-film video {
+  margin-top: 3rem;
+  width: 100%; }
+
+.item-logos {
+  grid-area: logos; }
+
+.item-logos img {
+  width: 400px; }
+
+.item-iota {
+  grid-area: iota;
+  position: relative; }
+
+.item-iota img {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px; }
+
+#pres {
+  margin-top: 3rem;
+  padding: 3rem 3rem 0 3rem;
+  background-color: #fdfdfd; }
+
+/*# sourceMappingURL=index.css.map */

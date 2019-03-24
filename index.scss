@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+$duration: 45s;
+$hauteur: 3rem;
+$fontsize: 1.5rem;
+$pseudo-white: #fdfdfd;
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.bandeau-titre {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  height: $hauteur;
+  background-color: rgba(#1e2730, 0.9);
+  box-sizing: content-box;
+  text-align: center;
+}
+
+.titre {
+  color: $pseudo-white;
+  display: inline-block;
+    height: $hauteur;
+    line-height: $hauteur;
+    white-space: nowrap;
+    box-sizing: content-box;
+}
+
+.titre img {
+  height: $hauteur;
+  vertical-align: baseline;
+}
+
+.titre span {
+  font-size: $fontsize;
+  position: relative;
+  bottom: 0.75rem;
+  margin-left: 40px;
+}
+
+.ticker-wrap {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  height: $hauteur;
+  background-color: rgba(#1e2730, 0.9);
+  padding-left: 100%;
+  box-sizing: content-box;
+
+  .ticker {
+    display: inline-block;
+    height: $hauteur;
+    line-height: $hauteur;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: $duration;
+    animation-duration: $duration;
+
+    &__item {
+      display: inline-block;
+
+      padding: 0 2rem;
+      font-size: $fontsize;
+      color: $pseudo-white;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $pseudo-white;
+
+  /*
+  background-image: url("assets/IOTA_Smart_Energy_Ledger_of_Everything.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  */
+}
+h1,
+h2,
+p {
+  padding: 0 5%;
+}
+
+.grid-container {
+  /*
+  margin-top: $hauteur;
+  */
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "film iota"
+    "logos iota";
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.item-film {
+  grid-area: film;
+}
+.item-film video {
+  margin-top: $hauteur;
+  width: 100%;
+}
+
+.item-logos {
+  grid-area: logos;
+}
+.item-logos img {
+  width: 400px;
+}
+
+.item-iota {
+  grid-area: iota;
+  position: relative;
+}
+.item-iota img {
+  width: 100%;
+  position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#pres {
+  margin-top: 3rem;
+  padding: 3rem 3rem 0 3rem;
+  background-color: $pseudo-white;
+}
